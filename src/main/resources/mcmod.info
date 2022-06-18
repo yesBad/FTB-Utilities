@@ -1,13 +1,13 @@
 [
 	{
 		"modid": "ftbutilities",
-		"name": "FTB Utilities",
+		"name": "FTB Utilities Server-side",
 		"description": "",
 		"version": "${version}",
 		"mcversion": "${mcversion}",
 		"url": "http://minecraft.curseforge.com/projects/ftb-utilities",
 		"updateUrl": "",
-		"authorList": ["LatvianModder"],
+		"authorList": ["yesBad","LatvianModder"],
 		"credits": "",
 		"logoFile": "assets/ftbutilities/textures/logo.png",
 		"screenshots": [],
