@@ -44,12 +44,13 @@ configurations.all {
 repositories {
 	mavenLocal()
 	maven { url "https://maven.latmod.com/" } //FTB Library, KubeJS, Aurora
+	maven { url "https://jitpack.io" }
 }
 
 dependencies {
-	deobfCompile "com.feed_the_beast.mods:FTBLib:${ftblib_version}"
-	deobfProvided "dev.latvian.kubejs:KubeJS:forge-1.12.2-${kubejs_version}"
-	deobfCompile "dev.latvian.mods:Aurora:1.+"
+	implementation 'com.github.FTBTeam:FTB-Library-Legacy:47586e9'
+	implementation 'com.github.LatvianModder:Aurora:15d7063'
+	implementation 'dev.latvian.kubejs:KubeJS-eol-1.12:forge-1.12.2-1.1.0.custom' //selfhosted
 	deobfProvided curse.resolve('ichunutil', project.ichunutil_file)
 	deobfProvided curse.resolve('journeymap', project.journeymap_file)
 	deobfProvided curse.resolve('chisels-bits', project.chiselsandbits_file)
