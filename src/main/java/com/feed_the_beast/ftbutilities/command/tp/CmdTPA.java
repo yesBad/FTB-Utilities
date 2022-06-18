@@ -50,13 +50,13 @@ public class CmdTPA extends CmdBase
 		{
 			ITextComponent component = FTBUtilities.lang(sender, "ftbutilities.lang.tpa.cant_request");
 			component.getStyle().setColor(TextFormatting.RED);
-			component.getStyle().setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, FTBUtilities.lang(sender, "ftbutilities.lang.tpa.from_to", selfName, otherName)));
+			component.getStyle().setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, FTBUtilities.lang(sender, "%s -> %s", selfName, otherName)));
 			sender.sendMessage(component);
 			return;
 		}
 
-		ITextComponent c = FTBUtilities.lang(sender, "ftbutilities.lang.tpa.request_sent");
-		c.getStyle().setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, FTBUtilities.lang(sender, "ftbutilities.lang.tpa.from_to", selfName, otherName)));
+		ITextComponent c = FTBUtilities.lang(sender, "Request sent!");
+		c.getStyle().setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, FTBUtilities.lang(sender, "%s -> %s", selfName, otherName)));
 		sender.sendMessage(c);
 
 		other.tpaRequestsFrom.add(self.player);
@@ -66,7 +66,7 @@ public class CmdTPA extends CmdBase
 		accept.getStyle().setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/tpaccept " + self.player.getName()));
 		accept.getStyle().setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new TextComponentString("/tpaccept " + self.player.getName())));
 
-		other.player.getPlayer().sendMessage(FTBUtilities.lang(other.player.getPlayer(), "ftbutilities.lang.tpa.request_received", selfName, accept));
+		other.player.getPlayer().sendMessage(FTBUtilities.lang(other.player.getPlayer(), "%s requests TPA! %s to accept.", selfName, accept));
 
 		Universe.get().scheduleTask(TimeType.MILLIS, System.currentTimeMillis() + 30000L, universe -> {
 			if (other.tpaRequestsFrom.remove(self.player))
